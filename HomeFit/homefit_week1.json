@@ -1,0 +1,212 @@
+{
+    "planName": "30 Günlük Fit Planı",
+    "days": [
+        {
+            "day": 1,
+            "mainExercises": [
+                {
+                    "title": "Jumping Jacks",
+                    "description": "Isınma için tüm vücudu harekete geçirir.",
+                    "duration": "30sn",
+                    "videoName": "jumping_jacks.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Bodyweight Squat",
+                    "description": "Kalça ve bacak kaslarını güçlendirir.",
+                    "duration": "15 tekrar",
+                    "videoName": "bodyweight_squat.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Wall Sit",
+                    "description": "Statik bacak dayanıklılığı sağlar.",
+                    "duration": "40sn",
+                    "videoName": "wall_sit.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Knee Push-up",
+                    "description": "Göğüs ve kol kaslarını çalıştırır.",
+                    "duration": "10 tekrar",
+                    "videoName": "knee_pushup.mp4",
+                    "premium": false
+                }
+            ],
+            "bonusExercise": {
+                "title": "Hollow Hold",
+                "description": "Core kaslarını ileri düzeyde çalıştırır.",
+                "duration": "30sn",
+                "videoName": "hollow_hold.mp4",
+                "premium": true
+            }
+        },
+        {
+            "day": 2,
+            "mainExercises": [
+                {
+                    "title": "Mountain Climbers",
+                    "description": "Kardiyo ve core birlikte çalışır.",
+                    "duration": "30sn",
+                    "videoName": "mountain_climbers.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Glute Bridge",
+                    "description": "Kalça ve bel kaslarını aktive eder.",
+                    "duration": "20 tekrar",
+                    "videoName": "glute_bridge.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Triceps Dip (Sandalye)",
+                    "description": "Arka kol kuvveti gelişir.",
+                    "duration": "10 tekrar",
+                    "videoName": "triceps_dip.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Plank",
+                    "description": "Denge ve dayanıklılık sağlar.",
+                    "duration": "30sn",
+                    "videoName": "plank.mp4",
+                    "premium": false
+                }
+            ],
+            "bonusExercise": {
+                "title": "Single Leg Squat",
+                "description": "Gelişmiş denge ve bacak gücü egzersizi.",
+                "duration": "10 tekrar (her bacak)",
+                "videoName": "single_leg_squat.mp4",
+                "premium": true
+            }
+        },
+        {
+            "day": 3,
+            "mainExercises": [
+                {
+                    "title": "High Knees",
+                    "description": "Kardiyo ve bacak aktivasyonu sağlar.",
+                    "duration": "30sn",
+                    "videoName": "high_knees.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Calf Raises",
+                    "description": "Baldır kaslarını güçlendirir.",
+                    "duration": "20 tekrar",
+                    "videoName": "calf_raises.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Incline Push-up",
+                    "description": "Üst göğüs ve omuz çalıştırır.",
+                    "duration": "12 tekrar",
+                    "videoName": "incline_pushup.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Side Plank (Sağ)",
+                    "description": "Yan core kaslarını çalıştırır.",
+                    "duration": "30sn",
+                    "videoName": "side_plank_right.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Side Plank (Sol)",
+                    "description": "Yan core kaslarını çalıştırır.",
+                    "duration": "30sn",
+                    "videoName": "side_plank_left.mp4",
+                    "premium": false
+                }
+            ],
+            "bonusExercise": {
+                "title": "Superman Hold",
+                "description": "Sırt ve kalça kaslarını çalıştırır.",
+                "duration": "40sn",
+                "videoName": "superman_hold.mp4",
+                "premium": true
+            }
+        },
+        {
+            "day": 4,
+            "mainExercises": [
+                {
+                    "title": "Step-Up (Sandalye)",
+                    "description": "Bacak gücünü artırır.",
+                    "duration": "10 tekrar (her bacak)",
+                    "videoName": "step_up.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Crunch",
+                    "description": "Karın kaslarını çalıştırır.",
+                    "duration": "15 tekrar",
+                    "videoName": "crunch.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Reverse Lunge",
+                    "description": "Kalça ve uyluk kaslarını çalıştırır.",
+                    "duration": "12 tekrar",
+                    "videoName": "reverse_lunge.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Arm Circles",
+                    "description": "Omuzları ve kolları ısıtır.",
+                    "duration": "40sn",
+                    "videoName": "arm_circles.mp4",
+                    "premium": false
+                }
+            ],
+            "bonusExercise": {
+                "title": "Burpees",
+                "description": "Full-body patlayıcı güç ve kardiyo egzersizi.",
+                "duration": "10 tekrar",
+                "videoName": "burpees.mp4",
+                "premium": true
+            }
+        },
+        {
+            "day": 5,
+            "mainExercises": [
+                {
+                    "title": "March in Place",
+                    "description": "Hafif kardiyo ile başla.",
+                    "duration": "30sn",
+                    "videoName": "march_in_place.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Side Lunges",
+                    "description": "İç bacak ve kalça çalıştırır.",
+                    "duration": "10 tekrar",
+                    "videoName": "side_lunges.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Wall Push-up",
+                    "description": "Başlangıç seviye göğüs egzersizi.",
+                    "duration": "12 tekrar",
+                    "videoName": "wall_pushup.mp4",
+                    "premium": false
+                },
+                {
+                    "title": "Heel Touch",
+                    "description": "Yan karın kaslarını hedefler.",
+                    "duration": "20 tekrar",
+                    "videoName": "heel_touch.mp4",
+                    "premium": false
+                }
+            ],
+            "bonusExercise": {
+                "title": "Jump Squat",
+                "description": "Patlayıcı bacak gücü kazanımı.",
+                "duration": "10 tekrar",
+                "videoName": "jump_squat.mp4",
+                "premium": true
+            }
+        }
+    ]
+}
