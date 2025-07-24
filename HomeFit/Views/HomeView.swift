@@ -80,9 +80,28 @@ enum WorkoutPlanOption: String, CaseIterable {
 struct WorkoutListView: View {
     
     let plan: WorkoutPlanOption
+    @StateObject private var viewModel = WorkoutListViewModel()
     
     var body: some View {
-        Text("Plan: \(plan.title)")
+        List {
+            ForEach(viewModel.days) { day in
+                NavigationLink(destination: WorkoutDayDetailView(day: day)) {
+                    VStack(alignment: .leading) {
+                        Text("Gün \(day.day)")
+                            .font(.headline)
+                        Text("\(day.mainExercises.count) egzersiz + 1 bonus")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            
+                    }
+                    .padding(.vertical,4)
+                }
+            }
+        }
+        .navigationTitle(plan.title)
+        .onAppear {
+            viewModel.loadPlan(from: plan)
+        }
     }
 }
 
