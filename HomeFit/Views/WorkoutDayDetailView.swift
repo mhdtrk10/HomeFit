@@ -10,6 +10,9 @@ import AVKit
 struct WorkoutDayDetailView: View {
     
     let day: WorkoutDay
+    let plan: WorkoutPlanOption
+    @ObservedObject var viewModel: WorkoutListViewModel
+    
     @State private var selectedVideoURL: URL?
     @State private var showVideoPlayer = false
     @State private var showPremiumAlert = false
@@ -71,7 +74,6 @@ struct WorkoutDayDetailView: View {
                     }
                 }
             }
-            
             .navigationTitle("Gün\(day.day)")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showVideoPlayer) {
@@ -90,7 +92,23 @@ struct WorkoutDayDetailView: View {
             } message: {
                 Text("Bu özel egzersiz sadece premium kullanıcılar içindir.")
             }
+           
         }
+        Button {
+            viewModel.markDayCompleted(day.day, for: plan)
+        } label: {
+            Text("✅ Bu Günü Tamamladım")
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.green.opacity(0.8))
+                .foregroundColor(.white)
+                .cornerRadius(12)
+                .padding(.horizontal)
+        }
+        .disabled(viewModel.isDayCompleted(day.day))
+        .padding(.bottom)
+        
     }
 }
 

@@ -83,25 +83,42 @@ struct WorkoutListView: View {
     @StateObject private var viewModel = WorkoutListViewModel()
     
     var body: some View {
-        List {
-            ForEach(viewModel.days) { day in
-                NavigationLink(destination: WorkoutDayDetailView(day: day)) {
-                    VStack(alignment: .leading) {
-                        Text("Gün \(day.day)")
-                            .font(.headline)
-                        Text("\(day.mainExercises.count) egzersiz + 1 bonus")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            
+        ZStack {
+            Color.blue.opacity(0.2)
+                .ignoresSafeArea(edges: .all)
+            List {
+                ForEach(viewModel.days) { day in
+                    NavigationLink(destination: WorkoutDayDetailView(day: day, plan: plan, viewModel: viewModel)) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Gün \(day.day)")
+                                    .font(.headline)
+                                Text("\(day.mainExercises.count) egzersiz + 1 bonus")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                
+                            }
+                            .padding(.vertical,4)
+                        }
+                        Spacer()
+                        // tamamlandıysa simge göster
+                        if viewModel.isDayCompleted(day.day) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                        }
                     }
                     .padding(.vertical,4)
                 }
+                .listRowBackground(Color.blue.opacity(0.2))
+                
+            }
+            .scrollContentBackground(.hidden)
+            
+            .onAppear {
+                viewModel.loadPlan(from: plan)
             }
         }
         .navigationTitle(plan.title)
-        .onAppear {
-            viewModel.loadPlan(from: plan)
-        }
     }
 }
 
