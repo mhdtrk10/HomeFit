@@ -14,6 +14,33 @@ class WorkoutListViewModel: ObservableObject {
     private let completedKeyPrefix = "completed_days_" // her plan için ayrı key
     
     
+    func cureentBadgeEmoji() -> String {
+        let completed = completedDays.count
+        
+        switch completed {
+        case 0: return "🔓"
+        case 1: return "🥇"
+        case 5...9: return "🥈"
+        case 10...14: return "🥉"
+        default: return "🏆"
+        }
+    }
+    
+    func currentBadgeTitle() -> String {
+        let completed = completedDays.count
+        switch completed {
+        case 0: return "Henüz rozet yok"
+        case 1: return "Başlangıç Rozeti"
+        case 5...9: return "İstikrar Rozeti"
+        case 10...14: return "Motivasyon Rozeti"
+        default: return "Efsane Rozeti"
+        }
+    }
+    
+    func completionPercentage() -> Double {
+        guard !days.isEmpty else { return 0.0 }
+        return Double(completedDays.count) / Double(days.count)
+    }
     
     func loadPlan(from plan: WorkoutPlanOption) {
         guard let url = Bundle.main.url(forResource: plan.rawValue, withExtension: "json") else {

@@ -86,36 +86,63 @@ struct WorkoutListView: View {
         ZStack {
             Color.blue.opacity(0.2)
                 .ignoresSafeArea(edges: .all)
-            List {
-                ForEach(viewModel.days) { day in
-                    NavigationLink(destination: WorkoutDayDetailView(day: day, plan: plan, viewModel: viewModel)) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Gün \(day.day)")
-                                    .font(.headline)
-                                Text("\(day.mainExercises.count) egzersiz + 1 bonus")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                                
+            VStack {
+                List {
+                    ForEach(viewModel.days) { day in
+                        NavigationLink(destination: WorkoutDayDetailView(day: day, plan: plan, viewModel: viewModel)) {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Gün \(day.day)")
+                                        .font(.headline)
+                                    Text("\(day.mainExercises.count) egzersiz + 1 bonus")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                    
+                                }
+                                .padding(.vertical,4)
                             }
-                            .padding(.vertical,4)
+                            Spacer()
+                            
+                            
+                            
+                            // tamamlandıysa simge göster
+                            if viewModel.isDayCompleted(day.day) {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                            }
                         }
-                        Spacer()
-                        // tamamlandıysa simge göster
-                        if viewModel.isDayCompleted(day.day) {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.green)
-                        }
+                        .padding(.vertical,4)
                     }
-                    .padding(.vertical,4)
+                    .listRowBackground(Color.blue.opacity(0.2))
+                    
                 }
-                .listRowBackground(Color.blue.opacity(0.2))
                 
-            }
-            .scrollContentBackground(.hidden)
-            
-            .onAppear {
-                viewModel.loadPlan(from: plan)
+                .scrollContentBackground(.hidden)
+                
+                .onAppear {
+                    viewModel.loadPlan(from: plan)
+                }
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("ilerleme")
+                        .font(.headline)
+                        .padding(.horizontal,10)
+                    
+                    ProgressView(value: viewModel.completionPercentage())
+                        .padding(.horizontal,10)
+                    
+                    Text("%\(Int(viewModel.completionPercentage()*100)) tamamlandı")
+                        .padding(.horizontal,10)
+                }
+                .padding(.top)
+                VStack(spacing: 8) {
+                    Text("Rozetin")
+                        .font(.headline)
+                    Text(viewModel.cureentBadgeEmoji())
+                        .font(.system(size: 50))
+                    Text(viewModel.currentBadgeTitle())
+                        .font(.subheadline)
+                        .foregroundColor(Color.gray)
+                }
             }
         }
         .navigationTitle(plan.title)
