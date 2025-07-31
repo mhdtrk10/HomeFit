@@ -1,49 +1,194 @@
 {
-    "planName": "30 Günlük Fit Planı",
+    "planName": "10 Günlük Test Planı",
     "days": [
         {
             "day": 1,
             "mainExercises": [
                 {
                     "title": "Jumping Jacks",
-                    "description": "Isınma için tüm vücudu harekete geçirir.",
+                    "description": "Tüm vücudu ısıtır",
                     "duration": "30sn",
                     "videoName": "jumping_jacks.mp4",
                     "premium": false,
                     "videoURL": "https://cdn.pixabay.com/video/sample/jumping_jacks.mp4"
                 },
                 {
-                    "title": "Bodyweight Squat",
-                    "description": "Kalça ve bacak kaslarını güçlendirir.",
+                    "title": "Squat",
+                    "description": "Bacakları güçlendirir",
                     "duration": "15 tekrar",
-                    "videoName": "bodyweight_squat.mp4",
+                    "videoName": "squat.mp4",
                     "premium": false,
-                    "videoURL": "https://cdn.pixabay.com/video/sample/bodyweight_squat.mp4"
+                    "videoURL": "https://cdn.pixabay.com/video/sample/squat.mp4"
                 }
             ],
             "bonusExercise": {
-                "title": "Hollow Hold",
-                "description": "Core kaslarını ileri düzeyde çalıştırır.",
-                "duration": "30sn",
-                "videoName": "hollow_hold.mp4",
+                "title": "Push-up",
+                "description": "Üst vücut kaslarını çalıştırır",
+                "duration": "10 tekrar",
+                "videoName": "pushup.mp4",
                 "premium": true,
-                "videoURL": "https://cdn.pixabay.com/video/sample/hollow_hold.mp4"
+                "videoURL": "https://cdn.pixabay.com/video/sample/pushup.mp4"
             }
         },
         {
             "day": 2,
             "mainExercises": [
                 {
+                    "title": "Squat",
+                    "description": "Bacakları güçlendirir",
+                    "duration": "15 tekrar",
+                    "videoName": "squat.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/squat.mp4"
+                },
+                {
+                    "title": "Push-up",
+                    "description": "Üst vücut kaslarını çalıştırır",
+                    "duration": "10 tekrar",
+                    "videoName": "pushup.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/pushup.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Mountain Climbers",
+                "description": "Kardiyo etkisi sağlar",
+                "duration": "30sn",
+                "videoName": "mountain_climbers.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/mountain_climbers.mp4"
+            }
+        },
+        {
+            "day": 3,
+            "mainExercises": [
+                {
+                    "title": "Push-up",
+                    "description": "Üst vücut kaslarını çalıştırır",
+                    "duration": "10 tekrar",
+                    "videoName": "pushup.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/pushup.mp4"
+                },
+                {
                     "title": "Mountain Climbers",
-                    "description": "Kardiyo ve core birlikte çalışır.",
+                    "description": "Kardiyo etkisi sağlar",
+                    "duration": "30sn",
+                    "videoName": "mountain_climbers.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/mountain_climbers.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Plank",
+                "description": "Core kaslarını çalıştırır",
+                "duration": "45sn",
+                "videoName": "plank.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/plank.mp4"
+            }
+        },
+        {
+            "day": 4,
+            "mainExercises": [
+                {
+                    "title": "Mountain Climbers",
+                    "description": "Kardiyo etkisi sağlar",
                     "duration": "30sn",
                     "videoName": "mountain_climbers.mp4",
                     "premium": false,
                     "videoURL": "https://cdn.pixabay.com/video/sample/mountain_climbers.mp4"
                 },
                 {
+                    "title": "Plank",
+                    "description": "Core kaslarını çalıştırır",
+                    "duration": "45sn",
+                    "videoName": "plank.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/plank.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Burpee",
+                "description": "Tam vücut egzersizi",
+                "duration": "10 tekrar",
+                "videoName": "burpee.mp4",
+                "premium": true,
+                "videoURL": "https://cdn.pixabay.com/video/sample/burpee.mp4"
+            }
+        },
+        {
+            "day": 5,
+            "mainExercises": [
+                {
+                    "title": "Plank",
+                    "description": "Core kaslarını çalıştırır",
+                    "duration": "45sn",
+                    "videoName": "plank.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/plank.mp4"
+                },
+                {
+                    "title": "Burpee",
+                    "description": "Tam vücut egzersizi",
+                    "duration": "10 tekrar",
+                    "videoName": "burpee.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/burpee.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Lunge",
+                "description": "Bacak ve kalça için",
+                "duration": "20 tekrar",
+                "videoName": "lunge.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/lunge.mp4"
+            }
+        },
+        {
+            "day": 6,
+            "mainExercises": [
+                {
+                    "title": "Burpee",
+                    "description": "Tam vücut egzersizi",
+                    "duration": "10 tekrar",
+                    "videoName": "burpee.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/burpee.mp4"
+                },
+                {
+                    "title": "Lunge",
+                    "description": "Bacak ve kalça için",
+                    "duration": "20 tekrar",
+                    "videoName": "lunge.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/lunge.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Glute Bridge",
+                "description": "Kalçayı aktive eder",
+                "duration": "20 tekrar",
+                "videoName": "glute_bridge.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/glute_bridge.mp4"
+            }
+        },
+        {
+            "day": 7,
+            "mainExercises": [
+                {
+                    "title": "Lunge",
+                    "description": "Bacak ve kalça için",
+                    "duration": "20 tekrar",
+                    "videoName": "lunge.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/lunge.mp4"
+                },
+                {
                     "title": "Glute Bridge",
-                    "description": "Kalça ve bel kaslarını aktive eder.",
+                    "description": "Kalçayı aktive eder",
                     "duration": "20 tekrar",
                     "videoName": "glute_bridge.mp4",
                     "premium": false,
@@ -51,12 +196,99 @@
                 }
             ],
             "bonusExercise": {
-                "title": "Single Leg Squat",
-                "description": "Gelişmiş denge ve bacak gücü egzersizi.",
-                "duration": "10 tekrar (her bacak)",
-                "videoName": "single_leg_squat.mp4",
+                "title": "Leg Raises",
+                "description": "Alt karın için",
+                "duration": "15 tekrar",
+                "videoName": "leg_raises.mp4",
                 "premium": true,
-                "videoURL": "https://cdn.pixabay.com/video/sample/single_leg_squat.mp4"
+                "videoURL": "https://cdn.pixabay.com/video/sample/leg_raises.mp4"
+            }
+        },
+        {
+            "day": 8,
+            "mainExercises": [
+                {
+                    "title": "Glute Bridge",
+                    "description": "Kalçayı aktive eder",
+                    "duration": "20 tekrar",
+                    "videoName": "glute_bridge.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/glute_bridge.mp4"
+                },
+                {
+                    "title": "Leg Raises",
+                    "description": "Alt karın için",
+                    "duration": "15 tekrar",
+                    "videoName": "leg_raises.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/leg_raises.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Hollow Hold",
+                "description": "Core dayanıklılığı için",
+                "duration": "30sn",
+                "videoName": "hollow_hold.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/hollow_hold.mp4"
+            }
+        },
+        {
+            "day": 9,
+            "mainExercises": [
+                {
+                    "title": "Leg Raises",
+                    "description": "Alt karın için",
+                    "duration": "15 tekrar",
+                    "videoName": "leg_raises.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/leg_raises.mp4"
+                },
+                {
+                    "title": "Hollow Hold",
+                    "description": "Core dayanıklılığı için",
+                    "duration": "30sn",
+                    "videoName": "hollow_hold.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/hollow_hold.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Jumping Jacks",
+                "description": "Tüm vücudu ısıtır",
+                "duration": "30sn",
+                "videoName": "jumping_jacks.mp4",
+                "premium": false,
+                "videoURL": "https://cdn.pixabay.com/video/sample/jumping_jacks.mp4"
+            }
+        },
+        {
+            "day": 10,
+            "mainExercises": [
+                {
+                    "title": "Hollow Hold",
+                    "description": "Core dayanıklılığı için",
+                    "duration": "30sn",
+                    "videoName": "hollow_hold.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/hollow_hold.mp4"
+                },
+                {
+                    "title": "Jumping Jacks",
+                    "description": "Tüm vücudu ısıtır",
+                    "duration": "30sn",
+                    "videoName": "jumping_jacks.mp4",
+                    "premium": false,
+                    "videoURL": "https://cdn.pixabay.com/video/sample/jumping_jacks.mp4"
+                }
+            ],
+            "bonusExercise": {
+                "title": "Squat",
+                "description": "Bacakları güçlendirir",
+                "duration": "15 tekrar",
+                "videoName": "squat.mp4",
+                "premium": true,
+                "videoURL": "https://cdn.pixabay.com/video/sample/squat.mp4"
             }
         }
     ]

@@ -17,6 +17,10 @@ struct WorkoutDayDetailView: View {
     @State private var showVideoPlayer = false
     @State private var showPremiumAlert = false
     
+    @State private var showBadgeCelebration = false
+    @State private var newlyEarnedBadge: String = ""
+    @State private var newlyEarnedTitle: String = ""
+    
     var body: some View {
         NavigationView {
             List {
@@ -85,6 +89,9 @@ struct WorkoutDayDetailView: View {
                     Text("video yüklenemedi.")
                 }
             }
+            .sheet(isPresented: $showBadgeCelebration) {
+                BadgeCelebrationView(badgeEmoji: newlyEarnedBadge, badgeTitle: newlyEarnedTitle)
+            }
             .alert("Premium İçerik", isPresented: $showPremiumAlert) {
                 Button("Tamam",role: .cancel) {
                     
@@ -96,6 +103,18 @@ struct WorkoutDayDetailView: View {
         }
         Button {
             viewModel.markDayCompleted(day.day, for: plan)
+            
+            let earned = viewModel.currentBadgeTitle()
+            let emoji = viewModel.cureentBadgeEmoji()
+            
+            if earned == "İstikrar Rozeti" && day.day == 5 ||
+               earned == "Motivasyon Rozeti" && day.day == 10 ||
+               earned == "Efsane Rozeti" && day.day == 15 {
+                newlyEarnedBadge = emoji
+                newlyEarnedTitle = earned
+                showBadgeCelebration = true
+            }
+            
         } label: {
             Text("✅ Bu Günü Tamamladım")
                 .font(.headline)
