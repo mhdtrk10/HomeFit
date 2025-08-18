@@ -46,6 +46,7 @@ struct HomeView: View {
                         }
                         
                     }
+                    
                     Spacer()
                 }
             }
@@ -112,6 +113,7 @@ struct WorkoutListView: View {
                             }
                         }
                         .padding(.vertical,4)
+                        
                     }
                     .listRowBackground(Color.blue.opacity(0.2))
                     
@@ -132,6 +134,10 @@ struct WorkoutListView: View {
                     
                     Text("%\(Int(viewModel.completionPercentage()*100)) tamamlandı")
                         .padding(.horizontal,10)
+                    
+                    NavigationLink("Rozetlerim") {
+                        BadgeCollectionView(viewModel: BadgeCollectionViewModel(), completedDays: viewModel.completedDays.count)
+                    }
                 }
                 .padding(.top)
                 VStack(spacing: 8) {
@@ -143,6 +149,7 @@ struct WorkoutListView: View {
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
                 }
+                
             }
         }
         .navigationTitle(plan.title)

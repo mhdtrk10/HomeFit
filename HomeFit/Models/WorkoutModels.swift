@@ -29,4 +29,11 @@ struct Exercise: Decodable,Identifiable {
     let premium: Bool
 }
 
+struct Badge: Identifiable {
+    let id = UUID()
+    let title: String
+    let emoji: String
+    let requiredDays: Int
+}
+
 
