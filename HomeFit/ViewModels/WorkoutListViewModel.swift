@@ -10,6 +10,8 @@ import Foundation
 class WorkoutListViewModel: ObservableObject {
     @Published var days: [WorkoutDay] = []
     @Published var completedDays: Set<Int> = []
+    @Published var showBadgeCelebration: Bool = false
+    @Published var newlyEarnedBadge: Badge?
     
     private let completedKeyPrefix = "completed_days_" // her plan için ayrı key
     
@@ -19,9 +21,11 @@ class WorkoutListViewModel: ObservableObject {
         
         switch completed {
         case 0: return "🔓"
-        case 1: return "🥇"
+        case 1...4: return "🥉"
         case 5...9: return "🥈"
-        case 10...14: return "🥉"
+        case 10...14: return "🥇"
+        case 15...19: return "🏅"
+        case 20...24: return "🎖️"
         default: return "🏆"
         }
     }
@@ -33,6 +37,8 @@ class WorkoutListViewModel: ObservableObject {
         case 1: return "Başlangıç Rozeti"
         case 5...9: return "İstikrar Rozeti"
         case 10...14: return "Motivasyon Rozeti"
+        case 15...19: return "Yükselik Rozeti"
+        case 20...24: return "Eşsizlik Rozeti"
         default: return "Efsane Rozeti"
         }
     }
@@ -70,7 +76,16 @@ class WorkoutListViewModel: ObservableObject {
     }
     
     func markDayCompleted(_ day: Int, for plan: WorkoutPlanOption) {
+        
         completedDays.insert(day)
+        
+        // rozet kontrolü
+        for badge in BadgeCollectionViewModel().badges {
+            newlyEarnedBadge = badge
+            showBadgeCelebration = true
+            break
+        }
+        
         saveCompletedDays(for: plan)
     }
     private func saveCompletedDays(for plan: WorkoutPlanOption) {

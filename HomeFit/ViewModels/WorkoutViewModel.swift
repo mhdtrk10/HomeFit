@@ -18,7 +18,7 @@ final class WorkoutViewModel: ObservableObject {
     }
     
     func loadPlan() {
-        workoutPlan = WorkoutPlanLoader.loadPlan(named: "homefit_week1")
+        workoutPlan = WorkoutPlanLoader.loadPlan(named: "homefit_15days")
         
     }
     

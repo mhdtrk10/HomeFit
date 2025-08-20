@@ -109,7 +109,9 @@ struct WorkoutDayDetailView: View {
             
             if earned == "İstikrar Rozeti" && day.day == 5 ||
                earned == "Motivasyon Rozeti" && day.day == 10 ||
-               earned == "Efsane Rozeti" && day.day == 15 {
+               earned == "Efsane Rozeti" && day.day == 15 ||
+                earned == "Eşsizlik Rozeti" && day.day == 20 ||
+                earned == "Efsane Rozeti" && day.day == 25{
                 newlyEarnedBadge = emoji
                 newlyEarnedTitle = earned
                 showBadgeCelebration = true

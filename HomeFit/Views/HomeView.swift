@@ -54,9 +54,9 @@ struct HomeView: View {
     }
 }
 enum WorkoutPlanOption: String, CaseIterable {
-    case plan15 = "homefit_week1"
-    case plan30 = "homefit_week2"
-    case plan45 = "homefit_week3"
+    case plan15 = "homefit_15days"
+    case plan30 = "homefit_30day"
+    case plan45 = "homefit_week1"
     case plan60 = "homefit_week4"
     
     var title: String {
@@ -102,7 +102,7 @@ struct WorkoutListView: View {
                                 }
                                 .padding(.vertical,4)
                             }
-                            Spacer()
+                            
                             
                             
                             
@@ -124,6 +124,14 @@ struct WorkoutListView: View {
                 .onAppear {
                     viewModel.loadPlan(from: plan)
                 }
+                .sheet(isPresented: $viewModel.showBadgeCelebration) {
+                    if let badge = viewModel.newlyEarnedBadge {
+                        BadgeCelebrationView(
+                            badgeEmoji: badge.emoji,
+                            badgeTitle: badge.title
+                            )
+                    }
+                }
                 VStack(alignment: .leading, spacing: 10) {
                     Text("ilerleme")
                         .font(.headline)
@@ -138,6 +146,11 @@ struct WorkoutListView: View {
                     NavigationLink("Rozetlerim") {
                         BadgeCollectionView(viewModel: BadgeCollectionViewModel(), completedDays: viewModel.completedDays.count)
                     }
+                    .frame(width: 95, height: 40)
+                    .foregroundColor(Color.black)
+                    .background(Color.blue.opacity(0.3))
+                    .cornerRadius(10)
+                    .padding()
                 }
                 .padding(.top)
                 VStack(spacing: 8) {
