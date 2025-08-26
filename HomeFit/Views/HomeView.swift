@@ -9,16 +9,28 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
+            
             ZStack {
-                Color.blue.opacity(0.55)
-                    .ignoresSafeArea(.all)
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea(.all)
                 
                 VStack(spacing: 20) {
                     Text("HomeFit")
                         .font(.largeTitle)
                         .bold()
                         .padding(.top, 40)
+                    Image("anasayfa")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                        .cornerRadius(20)
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
                     Spacer()
                     Text("Hedefini Seç!")
                         .font(.title2)
@@ -45,12 +57,15 @@ struct HomeView: View {
                             .padding(.horizontal)
                         }
                         
+                        
                     }
                     
                     Spacer()
                 }
             }
+            
         }
+        .tint(.black)
     }
 }
 enum WorkoutPlanOption: String, CaseIterable {
@@ -84,88 +99,92 @@ struct WorkoutListView: View {
     @StateObject private var viewModel = WorkoutListViewModel()
     
     var body: some View {
-        ZStack {
-            Color.blue.opacity(0.2)
-                .ignoresSafeArea(edges: .all)
-            VStack {
-                List {
-                    ForEach(viewModel.days) { day in
-                        NavigationLink(destination: WorkoutDayDetailView(day: day, plan: plan, viewModel: viewModel)) {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Gün \(day.day)")
-                                        .font(.headline)
-                                    Text("\(day.mainExercises.count) egzersiz + 1 bonus")
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
-                                    
+        NavigationStack {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea(.all)
+                VStack {
+                    
+                    
+                    List {
+                        ForEach(viewModel.days) { day in
+                            NavigationLink(destination: WorkoutDayDetailView(day: day, plan: plan, viewModel: viewModel)) {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text("Gün \(day.day)")
+                                            .font(.headline)
+                                        Text("\(day.mainExercises.count) egzersiz + 1 bonus")
+                                            .font(.subheadline)
+                                            .foregroundColor(.black.opacity(0.7))
+                                        
+                                    }
+                                    .padding(.vertical,4)
                                 }
-                                .padding(.vertical,4)
+                                
+                                
+                                
+                                
+                                // tamamlandıysa simge göster
+                                if viewModel.isDayCompleted(day.day) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.green)
+                                }
                             }
-                            
-                            
-                            
-                            
-                            // tamamlandıysa simge göster
-                            if viewModel.isDayCompleted(day.day) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.green)
-                            }
+                            .padding(.vertical,4)
+                            .tint(.black)
                         }
-                        .padding(.vertical,4)
+                        .listRowBackground(Color.white.opacity(0.17))
+                        
                         
                     }
-                    .listRowBackground(Color.blue.opacity(0.2))
+                    .cornerRadius(20)
+                    .frame(width: .infinity,height: 430)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .navigationBarTitleDisplayMode(.inline)
                     
-                }
-                
-                .scrollContentBackground(.hidden)
-                
-                .onAppear {
-                    viewModel.loadPlan(from: plan)
-                }
-                .sheet(isPresented: $viewModel.showBadgeCelebration) {
-                    if let badge = viewModel.newlyEarnedBadge {
-                        BadgeCelebrationView(
-                            badgeEmoji: badge.emoji,
-                            badgeTitle: badge.title
-                            )
+                    .onAppear {
+                        viewModel.loadPlan(from: plan)
                     }
-                }
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("ilerleme")
-                        .font(.headline)
-                        .padding(.horizontal,10)
-                    
-                    ProgressView(value: viewModel.completionPercentage())
-                        .padding(.horizontal,10)
-                    
-                    Text("%\(Int(viewModel.completionPercentage()*100)) tamamlandı")
-                        .padding(.horizontal,10)
-                    
-                    NavigationLink("Rozetlerim") {
-                        BadgeCollectionView(viewModel: BadgeCollectionViewModel(), completedDays: viewModel.completedDays.count)
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("ilerleme")
+                            .font(.headline)
+                            .padding(.horizontal,10)
+                        
+                        ProgressView(value: viewModel.completionPercentage())
+                            .padding(.horizontal,10)
+                        
+                        Text("%\(Int(viewModel.completionPercentage()*100)) tamamlandı")
+                            .padding(.horizontal,10)
+                        
+                        NavigationLink("Rozetlerim") {
+                            BadgeCollectionView(viewModel: BadgeCollectionViewModel(), completedDays: viewModel.completedDays.count)
+                        }
+                        .frame(width: 95, height: 40)
+                        .foregroundColor(Color.black)
+                        .background(Color.blue.opacity(0.3))
+                        .cornerRadius(10)
+                        .padding()
                     }
-                    .frame(width: 95, height: 40)
-                    .foregroundColor(Color.black)
-                    .background(Color.blue.opacity(0.3))
-                    .cornerRadius(10)
-                    .padding()
+                    .padding(.top)
+                    VStack(spacing: 8) {
+                        Text("Rozetin")
+                            .font(.headline)
+                        Text(viewModel.cureentBadgeEmoji())
+                            .font(.system(size: 50))
+                        Text(viewModel.currentBadgeTitle())
+                            .font(.subheadline)
+                            .foregroundColor(Color.black.opacity(0.7))
+                    }
+                    
                 }
-                .padding(.top)
-                VStack(spacing: 8) {
-                    Text("Rozetin")
-                        .font(.headline)
-                    Text(viewModel.cureentBadgeEmoji())
-                        .font(.system(size: 50))
-                    Text(viewModel.currentBadgeTitle())
-                        .font(.subheadline)
-                        .foregroundColor(Color.gray)
-                }
-                
             }
+            .navigationTitle(plan.title)
         }
-        .navigationTitle(plan.title)
     }
 }
 

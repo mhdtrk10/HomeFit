@@ -13,26 +13,35 @@ struct BadgeCollectionView: View {
     
     let columns = [GridItem(.adaptive(minimum: 100))]
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 24) {
-                ForEach(viewModel.badges) { badge in
-                    VStack {
-                        Text(badge.emoji)
-                            .font(.system(size: 48))
-                            .opacity(viewModel.hasEarned(badge: badge, completedDays: completedDays) ? 1.0 : 0.3)
-                            
-                        Text(badge.title)
-                            .font(.subheadline)
-                            .foregroundColor(viewModel.hasEarned(badge: badge, completedDays: completedDays) ? .primary : .gray)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea(.all)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 24) {
+                    ForEach(viewModel.badges) { badge in
+                        VStack {
+                            Text(badge.emoji)
+                                .font(.system(size: 48))
+                                .opacity(viewModel.hasEarned(badge: badge, completedDays: completedDays) ? 1.0 : 0.3)
+                                
+                                
+                            Text(badge.title)
+                                .font(.subheadline)
+                                .foregroundColor(viewModel.hasEarned(badge: badge, completedDays: completedDays) ? .primary : .gray)
+                        }
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(12)
                     }
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(12)
                 }
+                .padding()
             }
-            .padding()
+            .navigationTitle("Rozet Koleksiyonu")
         }
-        .navigationTitle("Rozet Koleksiyonu")
     }
 }
 
